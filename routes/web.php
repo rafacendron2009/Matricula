@@ -39,8 +39,3 @@ Route::get('/courses/registration/{idCourse}/{idUser}/deleteStudents', 'Registra
 Route::get('/courses/registration/adminregisterlist', 'RegistrationsController@adminregisterlist');
 Route::get('courses/registration/allcourses', 'RegistrationsController@allcourses');
 Route::get('user/admin/deleteregistration', 'RegistrationsController@deleteregistration');
-Route::get('courses/registration/{idCourse}/{idUser}/authtorizeStudent', 'RegistrationsController@authtorizeStudent');
-Route::get('courses/registration/adminre', 'RegistrationsController@adminre');
-Route::get('courses/user/{id}/userre', 'RegistrationsController@userre');
-Route::get('courses/user/{id}/userde', 'RegistrationsController@userde');
-Route::get('courses/user/mycourses', 'RegistrationsController@mycourses');
