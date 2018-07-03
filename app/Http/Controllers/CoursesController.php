@@ -37,48 +37,7 @@ class CoursesController extends Controller
         }
     }
 
-    public function store(Request $request) 
-    {
-        $c = new Courses;
-        $c->nameCourse = $request->input('nameCourse');
-        $c->Ementa = $request->input('ementa');
-        $c->qtnStudents = $request->input('qtnStudents');
 
-        if ($c->save()) {
-            \Session::flash('status', 'Curso criado com sucesso.');
-            return redirect('/courses');
-        } else {
-            \Session::flash('status', 'Ocorreu um erro ao criar o Curso.');
-            return view('courses.new');
-        }
-    }
-
-    public function edit($id) {
-        $courses = Courses::findOrFail($id);
-
-
-        if (Gate::allows('admin-only', auth()->user())) {
-            
-            return view('courses.edit', ['courses' => $courses]); 
-        }else {
-            \Session::flash('error', 'Voce não tem permissão para entrar nessa pagina.');
-            return view('home');
-        }
-        
-        
-    }
-
-    public function delete($id) {
-        $courses = Courses::findOrFail($id);
-        if (Gate::allows('admin-only', auth()->user())) {
-            
-            return view('courses.delete', ['courses' => $courses]); 
-        }else {
-            \Session::flash('error', 'Voce não tem permissão para entrar nessa pagina.');
-            return view('home');
-        }
-        
-    }
 
     public function update(Request $request, $id) {
         $c = Courses::findOrFail($id);
