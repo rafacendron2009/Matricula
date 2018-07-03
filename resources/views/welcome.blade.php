@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                
+                background-color: #fff;
                
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
@@ -60,7 +60,7 @@
                 text-transform: uppercase;
             }
             .links > a#este {
-                color: white;
+                color: black;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
